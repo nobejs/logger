@@ -21,3 +21,8 @@ You can currently run Nobe following:
 Visit [NobeJs Website](https://nobejs.org)
 
 gh release create v1.1.2-alpha.8 --notes "v1.1.2-alpha.8" -p
+
+SELECT service, url, timestamp, http_method, status_code, source, meta::jsonb->>'team_uuid' as team_uuid, created_at FROM logs;
+SELECT service, meta::jsonb->>'team_uuid' as team_uuid FROM logs WHERE meta::jsonb->>'team_uuid' = '6dbd2c45-04b7-43b8-8689-5cd60cdb193e';
+SELECT service, meta::jsonb->>'team_uuid' as team_uuid FROM logs WHERE meta::jsonb->>'team_uuid' = 'cb9fbbe1-2099-4ece-badc-9e21c3d98ec8';
+SELECT service, url, timestamp, http_method, status_code, source, meta::jsonb->>'team_uuid' as team_uuid, created_at FROM logs WHERE meta::jsonb->>'team_uuid' = 'cb9fbbe1-2099-4ece-badc-9e21c3d98ec8';
